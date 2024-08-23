@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 
 import { DraftModeScript } from '@makeswift/runtime/next/server'
 
+import { Extra } from '@/components/extra'
 import '@/lib/makeswift/components'
 import { MakeswiftProvider } from '@/lib/makeswift/provider'
 
@@ -21,11 +22,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html id="2" lang="en">
       <head>
-        <DraftModeScript />
+        <DraftModeScript appOrigin={process.env.MAKESWIFT_APP_ORIGIN} />
       </head>
       <body className={inter.className}>
+        <Extra />
         <MakeswiftProvider>{children}</MakeswiftProvider>
       </body>
     </html>

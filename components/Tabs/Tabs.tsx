@@ -38,6 +38,7 @@ export const Tabs = forwardRef(function Tabs(
           </RadixTabs.List>
           {tabs.map((tab, index) => (
             <RadixTabs.Content key={index} className="outline-none " value={index.toString()}>
+              test2
               {tab.children}
             </RadixTabs.Content>
           ))}
